@@ -36,7 +36,10 @@ cv2.rectangle(foto_prueba, #Imagen donde dibujar rectangulo
               2 #Grosor del borde del rectangulo
 )
 
+#Realizar comparacion
+resultado = fr.compare_faces([cara_codificada_a], cara_codificada_b)
 
+print(resultado)
 
 #Mostrar Imagenes
 cv2.imshow('Foto Control', foto_control)
