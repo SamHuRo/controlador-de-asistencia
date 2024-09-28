@@ -37,13 +37,19 @@ cv2.rectangle(foto_prueba, #Imagen donde dibujar rectangulo
 )
 
 #Realizar comparacion
-resultado = fr.compare_faces([cara_codificada_a], cara_codificada_b)
-
+resultado = fr.compare_faces([cara_codificada_a], #Lista de las caras a comparar
+                             cara_codificada_b, #Imagen a comparar
+                             0.3 #Tolerancia
+)
 print(resultado)
 
 #Mostrar Imagenes
 cv2.imshow('Foto Control', foto_control)
 cv2.imshow('Foto Prueba', foto_prueba)
+
+#Medida de distancia
+distancia = fr.face_distance([cara_codificada_a], cara_codificada_b)
+print(distancia)
 
 #Mantener el programa abierto
 cv2.waitKey(0)
