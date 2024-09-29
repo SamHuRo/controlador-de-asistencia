@@ -2,6 +2,7 @@ import cv2
 import face_recognition as fr
 import numpy as np 
 import os
+from datetime import datetime
 
 #Crear la base de datos
 ruta = 'Empleados'
@@ -28,6 +29,10 @@ def codificar(imagenes):
         lista_codificada.append(codificada)
     
     return lista_codificada
+
+#Registrar ingresos
+def registrar_ingresos(persona):
+    return True
 
 lista_empleados_codificada = codificar(mis_imagenes)
 
